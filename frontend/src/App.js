@@ -8,12 +8,10 @@ import { toolsMenuData } from "./mockdata";
 export const App = ()=>{
 const [myToolsdata, setMyToolsdata] = useState(toolsMenuData);
 const [selectedtool, setSelectedTool] = useState({});
-console.log('moment ', moment('2021-01-02T07:57:45.121Z').format('DD MMM YYYY'), myToolsdata);
 
-const onClickTool= toolID => {
+const onClickTool = toolID => {
   const foundTool = myToolsdata?.find(item=>item.id === toolID);
   setSelectedTool(foundTool);
-console.log('foundTool ', foundTool);
 }
 
 
@@ -55,11 +53,11 @@ console.log('foundTool ', foundTool);
                                     <span class="card-title collapsed"> Explorer
                                     </span>
                                     <div class="icon-header">
-                                        <i id="explorer" class="bi bi-dash" data-toggle="collapse" href="#collapseOne"></i>
-                                        {/* <i class="fa fa-expand"></i> */}
-                                        <i class="bi bi-arrows-angle-expand"></i>
-                                        {/* <i class="fa fa-angle-down"></i> */}
-                                        <i class="bi bi-chevron-down"></i>
+                                        <i id="explorer" class="bi bi-dash" data-toggle="collapse" href="#collapseOne" />
+                                        <i class="bi bi-arrows-angle-expand" 
+                                        // onClick={onClickResize}
+                                        />
+                                        <i class="bi bi-chevron-down" />
                                     </div>                                    
                                 </div>
                                 <div id="collapseOne" class="card-body collapse" >
