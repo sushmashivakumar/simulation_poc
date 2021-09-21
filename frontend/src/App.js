@@ -15,15 +15,14 @@ const onClickTool = toolID => {
 }
 
 
-  return (
+
+return (
     <div>
       {/* Simulation POC */}
-<div className="custom-tabs-section">
-    <div class="custom-tabs-panel">
+    <div className="custom-tabs-section">
+      <div class="custom-tabs-panel">
         <div class="menu-bar-icon">
-            {/* <i class="fa fa-bars"></i> */}
             <i class="bi bi-list"></i>
-            {/* <i class="bi bi-alarm-fill text-warning" style={{ fontSize: 20 }}></i> */}
         </div>
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
@@ -41,7 +40,7 @@ const onClickTool = toolID => {
         </ul>
     </div>
 
-    {/* <!-- Tab panes --></div> */}
+    {/*  Tab panes */}
    <div class="tabs-body-section">
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active show" id="tools">
@@ -66,7 +65,6 @@ const onClickTool = toolID => {
                                             <div class="my-tool-header" style={{borderRight:'solid 1px #ccc'}}>
                                                 <h6>My Tools</h6>
                                                 <a><span style={{ fontSize: 10 }}>All</span> 
-                                                {/* <i class="fa fa-exchange"></i> */}
                                                 <i class="bi bi-arrow-left-right" style={{ fontSize: 10 }}></i>
                                                 </a>
                                             </div>
@@ -105,19 +103,19 @@ const onClickTool = toolID => {
                                                     <div class="previous-list-panel">
                                                     <i class="bi bi-file-earmark-text"></i>                                                        <div class="content-list">
                                                             <span>No Descriptions Entered</span>
-                                                            <p>{moment('2021-09-21T07:57:45.121Z').format('DD MMM YYYY')}</p>
+                                                            <p>{moment(Date.now()).format('DD MMM YYYY')}</p>
                                                         </div>                                                        
                                                     </div>
                                                     <div class="previous-list-panel">
                                                     <i class="bi bi-file-earmark-text"></i>                                                        <div class="content-list">
                                                             <span>No Descriptions Entered</span>
-                                                            <p>{moment('2021-09-21T07:57:45.121Z').format('DD MMM YYYY')}</p>
+                                                            <p>{moment('2021-09-20T07:57:45.121Z').format('DD MMM YYYY')}</p>
                                                         </div>                                                        
                                                     </div>
                                                     <div class="previous-list-panel">
                                                     <i class="bi bi-file-earmark-text"></i>                                                        <div class="content-list">
                                                             <span>No Descriptions Entered</span>
-                                                            <p>{moment('2021-09-21T07:57:45.121Z').format('DD MMM YYYY')}</p>
+                                                            <p>{moment(Date.now()).format('DD MMM YYYY')}</p>
                                                         </div>                                                        
                                                     </div>
                                                 </div>
@@ -137,16 +135,13 @@ const onClickTool = toolID => {
                                     </span>
                                     <div class="icon-header">
                                     <i id="viewer" class="bi bi-dash" data-toggle="collapse" href="#collapsetwo"></i>
-                                        {/* <i class="fa fa-expand"></i> */}
                                         <i class="bi bi-arrows-angle-expand"></i>
-                                        {/* <i class="fa fa-angle-down"></i> */}
                                         <i class="bi bi-chevron-down"></i>
                                     </div>                                    
                                 </div>
                                 <div id="collapsetwo" class="card-body collapse" >
                                     <div class="right-body-section">
                                           <Iframe
-                                          // url="http://www.youtube.com/embed/xDMP3i36naA"
                                                   url={selectedtool.viewerURL}
                                                   width="800px"
                                                   height="800px"
@@ -172,7 +167,7 @@ const onClickTool = toolID => {
 
     {/* Closing Body */}
 </div>
-  // </div>
+
   );
 }
 
