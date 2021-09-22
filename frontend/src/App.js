@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Iframe from 'react-iframe';
+
 import moment from 'moment';
 // import styles from "./App.css";
 import "./App.css";
 import { toolsMenuData } from "./mockdata";
+import { SimulationIframe } from "./components/SimulationIframe";
 
 export const App = ()=>{
 const [myToolsdata, setMyToolsdata] = useState(toolsMenuData);
@@ -107,24 +108,41 @@ return (
 
                                             <div class="my-tool-section">
                                                 <div class="my-tool-body">
-                                                <button class="btn btn-primary btn-block" type="button">
+                                                <button class="btn btn-primary btn-block" type="button" style={{backgroundColor:'#00508b'}}>
                                                         <i class="bi bi-play-circle" />                                                  <span>Run Tool</span>
                                                     </button>
                                                     <p>Previours Runs</p>
                                                     <div class="previous-list-panel">
-                                                    <i class="bi bi-file-earmark-text" />                                                       <div class="content-list">
+                                                    <i class="bi bi-file-earmark-text" />  
+                                                       <div class="content-list">
                                                             <span>No Descriptions Entered</span>
                                                             <p>{moment(Date.now()).format('DD MMM YYYY')}</p>
                                                         </div>                                                        
                                                     </div>
                                                     <div class="previous-list-panel">
-                                                    <i class="bi bi-file-earmark-text" />                                                       <div class="content-list">
+                                                    <i class="bi bi-file-earmark-text" />                                                       
+                                                        <div class="content-list">
                                                             <span>No Descriptions Entered</span>
                                                             <p>{moment('2021-09-20T07:57:45.121Z').format('DD MMM YYYY')}</p>
                                                         </div>                                                        
                                                     </div>
                                                     <div class="previous-list-panel">
-                                                    <i class="bi bi-file-earmark-text" />                                                       <div class="content-list">
+                                                    <i class="bi bi-file-earmark-text" />                                                       
+                                                       <div class="content-list">
+                                                            <span>No Descriptions Entered</span>
+                                                            <p>{moment('2021-09-20T07:57:45.121Z').format('DD MMM YYYY')}</p>
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="previous-list-panel">
+                                                    <i class="bi bi-file-earmark-text" />                                                       
+                                                        <div class="content-list">
+                                                            <span>No Descriptions Entered</span>
+                                                            <p>{moment('2021-09-20T07:57:45.121Z').format('DD MMM YYYY')}</p>
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="previous-list-panel">
+                                                    <i class="bi bi-file-earmark-text" />                                                       
+                                                        <div class="content-list">
                                                             <span>No Descriptions Entered</span>
                                                             <p>{moment(Date.now()).format('DD MMM YYYY')}</p>
                                                         </div>                                                        
@@ -154,15 +172,7 @@ return (
                                 </div>
                                 <div id="collapsetwo" class="card-body fade in show collapse" >
                                     <div class="right-body-section">
-                                          <Iframe
-                                                  url={selectedtool.viewerURL}
-                                                  width="100%"
-                                                  height="800px"
-                                                  id="myId"
-                                                  className="myClassname"
-                                                  display="initial"
-                                                  position="relative"
-                                          />
+                                          <SimulationIframe selectedtool={selectedtool} />
                                     </div>
                                 </div>
                                 

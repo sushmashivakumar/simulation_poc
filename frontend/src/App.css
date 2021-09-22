@@ -15,19 +15,19 @@ body{margin: 0px; padding:0px;}
 .custom-tabs-panel > .nav-tabs .nav-link.active{border:none; border-bottom: solid 3px rgb(78, 130, 241); color: #555;}
 .tabs-body-section{margin: 0px; padding: 0px;}
 .tabs-body-panel{margin: 0px; padding: 0px; display: flex; height:calc(100vh - 95px);}
-.tabs-body-panel .tabs-left-body{flex:1; border-right: solid 1px #ccc;}
+.tabs-body-panel .tabs-left-body{flex:7; border-right: solid 1px #ccc;}
 .tabs-body-panel .accordion > .card{padding: 0px; border: none; border-bottom: solid 1px #ccc;
     border-radius: 0px;}
 .tabs-body-panel .accordion > .card > .card-header{background: none; display: flex; justify-content: space-between;}
 .icon-header i{padding: 0px 5px; cursor: pointer;}
-.tabs-body-panel .tabs-right-body{flex: 1;}
+.tabs-body-panel .tabs-right-body{flex: 11;}
 /*.accordion .card-header:after {font-family: 'FontAwesome'; content: "\f068"; float: right;}
 .accordion .card-header.collapsed:after {content: "\f067";}
 */
 .collapse-body-panel{margin: 0px; padding: 0px; display: flex;}
-.collapse-body-panel > .my-tools{flex: 2; padding:0px;}
-.collapse-body-panel > .selected-my-tools{flex: 5; padding:0px;}
-.my-tool-header{margin: 0px; padding:5px; background: #3f6ef1; color: #fff; min-height: 45px;
+.collapse-body-panel > .my-tools{flex: 3; padding:0px;}
+.collapse-body-panel > .selected-my-tools{flex: 4; padding:0px;}
+.my-tool-header{margin: 0px; padding:5px; background: #00508b; color: #fff; min-height: 45px;
     display: flex; align-items: center;}
 .my-tool-header > h6{flex: 0 0 94%;}
 .my-tool-header > a > i{display: block; margin-top: -5px;}
@@ -40,7 +40,6 @@ border-left: none; padding: 1px 5px;  border-top-right-radius: 5px; border-botto
   margin-top: 50px;
 }
 .recipe{
-  /* margin: 20px 20px 0px 20px; */
   height: 40px;
   margin: 0px; padding: 0px; border: solid 1px #ccc;
   justify-content: flex-start;
@@ -51,14 +50,13 @@ border-left: none; padding: 1px 5px;  border-top-right-radius: 5px; border-botto
 }
 
 .recipe-selected{
-  /* margin: 20px 20px 0px 20px; */
-  cursor: pointer;
   height: 40px;
   margin: 0px; padding: 0px; border: solid 1px #ccc;
   justify-content: flex-start;
   padding-left: 10px;
   display: flex; align-items: center;
-   background: linear-gradient(270deg, rgba(131,58,180,1) 0%, rgba(252,69,69,1) 100%, rgba(253,29,29,1) 100%);
+  background: linear-gradient(270deg, rgba(131,58,180,1) 0%, rgba(252,69,69,1) 100%, rgba(253,29,29,1) 100%);
+  cursor: pointer;
 }
 .my-tool-section{margin: 0px; padding: 0px;}
 .my-tool-section > .my-tool-body{background: #fff; border-left: none;}
