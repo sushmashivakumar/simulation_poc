@@ -11,10 +11,11 @@ const [myToolsdata, setMyToolsdata] = useState(toolsMenuData);
 const [selectedtool, setSelectedTool] = useState({});
 const [isResizeExplorer, setResizeExplorer] = useState(false);
 const [isResizeViewer, setResizeViewer] = useState(false);
-const [isMiniExplorer, setMiniExplorer] = useState(true);
+const [filteredToolData, setFilteredToolData] = useState(toolsMenuData);
+
 
 const onClickTool = toolID => {
-  const foundTool = myToolsdata?.find(item=>item.id === toolID);
+  const foundTool = filteredToolData?.find(item=>item.id === toolID);
   setSelectedTool(foundTool);
 }
 
@@ -24,9 +25,13 @@ const onClickResizeExplorer = ()=>{
 
 const onClickResizeViewer = ()=>{
   setResizeViewer(!isResizeViewer);
-   
 }
 
+const onSearchTools = event=>{
+const searchString =   event.target.value?.toLowerCase();
+const foundResultOnSearchString = myToolsdata?.filter(tool => tool?.title?.toLowerCase()?.includes(searchString));
+setFilteredToolData(foundResultOnSearchString);
+}
 
 return (
     <div>
@@ -38,16 +43,16 @@ return (
         </div>
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" href="#tools" role="tab" data-toggle="tab">my tools</a>
+                <a class="nav-link active" href="#tools" role="tab" data-toggle="tab">My Tools</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#workspace" role="tab" data-toggle="tab">my workspace</a>
+                <a class="nav-link" href="#workspace" role="tab" data-toggle="tab">My Workspace</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#library" role="tab" data-toggle="tab">library</a>
+                <a class="nav-link" href="#library" role="tab" data-toggle="tab">Library</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#sharing" role="tab" data-toggle="tab">sharing</a>
+                <a class="nav-link" href="#sharing" role="tab" data-toggle="tab">Sharing</a>
             </li>
         </ul>
     </div>
@@ -82,18 +87,18 @@ return (
                                                 <i class="bi bi-arrow-left-right" style={{ fontSize: 10 }} />
                                                 </a>
                                             </div>
-                                            <div class="my-tool-body">
+                                            <div class="my-tool-body search-button">
                                                 <div class="input-group">
-                                                    <input type="text" placeholder="min" />
+                                                    <input type="text" onChange={(e)=>onSearchTools(e)}/>
                                                     <div class="input-group-append">
-                                                      <button  type="button">
+                                                      <button  type="button" >
                                                       <i class="bi bi-search" />
                                                       </button>
                                                     </div>
                                                   </div>
 
                                             <div class="tool-list">
-                                                  {myToolsdata?.map(tool => <div class={selectedtool?.id == tool?.id ? "recipe-selected" : "recipe"}>
+                                                  {filteredToolData?.map(tool => <div class={selectedtool?.id === tool?.id ? "recipe-selected" : "recipe"}>
                                                       <span onClick={()=>onClickTool(tool.id)}>{tool.title}</span>
                                                     </div>)}
                                             </div>
@@ -109,9 +114,10 @@ return (
                                             <div class="my-tool-section">
                                                 <div class="my-tool-body">
                                                 <button class="btn btn-primary btn-block" type="button" style={{backgroundColor:'#00508b'}}>
-                                                        <i class="bi bi-play-circle" />                                                  <span>Run Tool</span>
+                                                        <i class="bi bi-play-circle" />                                               
+                                                        <span>Run Tool</span>
                                                     </button>
-                                                    <p>Previours Runs</p>
+                                                    <p>Previours Runs:</p>
                                                     <div class="previous-list-panel">
                                                     <i class="bi bi-file-earmark-text" />  
                                                        <div class="content-list">
@@ -147,6 +153,10 @@ return (
                                                             <p>{moment(Date.now()).format('DD MMM YYYY')}</p>
                                                         </div>                                                        
                                                     </div>
+
+                                                    {/* <div>
+                                                {'page 5'}
+                                                </div> */}
                                                 </div>
                                             </div>
                                         </div>

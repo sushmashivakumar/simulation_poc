@@ -33,9 +33,27 @@ body{margin: 0px; padding:0px;}
 .my-tool-header > a > i{display: block; margin-top: -5px;}
 .my-tool-body{margin: 0px; padding:10px 5px; background: #eee; border: solid 1px #ddd; height: calc(100vh - 200px);}
 .my-tool-body > .input-group{justify-content: center;}
-.my-tool-body > .input-group input{border:solid 1px #ccc; padding:1px 5px; border-top-left-radius: 5px; border-bottom-left-radius: 5px}
-.my-tool-body > .input-group button{box-shadow: none; border: solid 1px #ddd; background: #fff;
-border-left: none; padding: 1px 5px;  border-top-right-radius: 5px; border-bottom-right-radius: 5px}
+.my-tool-body > .input-group input{
+  border: solid 1px #ccc;
+  /* border-right: none; */
+  padding: 1px 5px;
+  border-radius: 3px;
+  border-top-right-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+
+  background: #fff;}
+
+
+.search-button > .input-group button{
+    right: 25px;
+    position: relative;
+    background: none;
+    border: none;
+    padding: 1px 5px;
+    color: #ccc;
+
+}
+
 .tool-list{
   margin-top: 50px;
 }
